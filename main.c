@@ -9,9 +9,9 @@ int main() {
   char dest[20];
   //printf("before while");
   while (fgets(dest, 20, stdin)) {
-    printf("%s", dest);
+    //printf("%s", dest);
     char *newline = strstr(dest, "\n");
-    newline = NULL;
+    *newline = 0;
     char *s = dest;
     char *command[20];
     int i = 0;
@@ -20,8 +20,8 @@ int main() {
       i++;
     }
     command[i] = 0;
-    printf("command[0]: %s\n", command[0]);
-    printf("command[1]: %s\n", command[1]);
+    //printf("command[0]: %s\n", command[0]);
+    //printf("command[1]: %s\n", command[1]);
     execvp(command[0], command);
   }
 
